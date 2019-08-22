@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.4.1/dist/jquery.min.js"></script>
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // $.post("http://123.206.95.76:7081/sdkapi/v1/token", {
+        //     "name": "fada222",
+        //     "password": "123456"
+        // }, function (result) {
+        //     console.log(result);
+        // },'json');
+        $.ajax({
+    		 url:"http://123.206.95.76:7081/sdkapi/v1/token",
+    		//  url:"http://localhost/sdkapi/v1/token",
+    		 type:"post",
+    		 data:'{"name":"fada222","password":"12345622"}',
+             contentType:"application/json; charset=UTF-8",
+    		success:function(data){
+    			console.log(data);
+    		}
+    	 });
+    </script>
+</body>
+
+</html>

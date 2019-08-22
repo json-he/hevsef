@@ -1,0 +1,46 @@
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://unpkg.com/element-ui@2.0.3/lib/theme-chalk/index.css">
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.5.17/dist/vue.js"></script>
+    <script src="https://cdn.bootcss.com/vue-resource/1.5.1/vue-resource.min.js"></script>
+    <script src="https://unpkg.com/element-ui@2.0.3/lib/index.js"></script>
+    
+</head>
+<script src="./test.vue"></script>
+    <div id="app">
+        {{test}}
+        <!-- {{reversedMessage()}} -->
+        <test :param='222'></test>
+        
+    </div>
+    
+
+
+</html>
+<script>
+    var vm = new Vue({
+        el: '#app',
+        data: {
+            test: 'this is first vue'
+        },
+        methods: {
+            reversedMessage: function () {
+                this.$http.post(
+                'www.api.com/user', {
+                name: 'chenrj',
+                sex: '1',
+                age: 18
+                }, {
+                emulateJSON: true
+                }).then(function (res) {
+                this.$message('添加成功');
+                }, function () {
+                this.$message.error('添加失败');
+                });
+                return this.test.split('').reverse().join('')
+            }
+        }
+    })
+</script>
+

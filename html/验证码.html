@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>验证码测试</title>
+</head>
+
+<body>
+    <style>
+        .can {
+            background: #00b894;
+
+        }
+
+        .cas {
+            width: 100px;
+            height: 50px;
+            border: 1px solid black;
+            cursor: pointer;
+        }
+    </style>
+
+    <div class="cas" onclick="checkCode()">
+        <canvas id="can" width="100" height="50"></canvas>
+
+    </div>
+    <input type="text" id="boxChart">
+    <button onclick="submit()">登录</button>
+    <script>
+        var arr = new Array(4);
+        var rDom;
+        checkCode();
+        function checkCode() {
+            randomArr();
+            clearCanvas();
+            DrawCanvas();
+        }
+        //随机生成数组函数
+        function randomArr() {
+            for (var i = 0; i < arr.length; i++) {
+                rDom = Math.round(Math.random() * 9);
+                arr[i] = rDom;
+            }
+        }
+        //绘制文本
+        function DrawCanvas() {
+            var context = document.getElementById("can").getContext("2d");
+            // 设置字体
+            context.font = "26px bold 黑体";
+            // 设置颜色
+            context.fillStyle = "#34495e";
+            // 设置水平对齐方式
+            context.textAlign = "center";
+            // 设置垂直对齐方式
+            context.textBaseline = "middle";
+            // 绘制文字（参数，x坐标，y坐标）
+            context.fillText(arr.join(" "), 50, 28);
+        }
+        //清空画布
+        function clearCanvas() {
+            var c = document.getElementById("can");
+            var cxt = c.getContext("2d");
+            cxt.clearRect(0, 0, c.width, c.height);
+        }
+        //登录方法
+        function submit() {
+            var boxC = document.getElementById("boxChart").value;
+            //数组转换为字符串
+            var Arr = arr.join("");
+            if (boxC == Arr) {
+                alert("输入成功");
+            } else {
+                alert("请输入正确的验证码");
+                var clearBoxC = document.getElementById("boxChart").value = "";
+                checkCode();
+            }
+        }
+        //绑定回车键
+        document.onkeydown = function () {
+            if (event.keyCode == "13") {
+                submit();
+            }
+        }
+    </script>
+</body>
+
+</html>
