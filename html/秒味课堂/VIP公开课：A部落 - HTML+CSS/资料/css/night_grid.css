@@ -1,0 +1,38 @@
+body{
+    margin:0;
+}
+
+.box{
+    width:700px;
+    height:700px;
+    background: url("../images/night.gif") no-repeat;
+    margin:0 auto;
+    overflow: hidden;
+}
+
+.main{
+    width:400px;
+    height:400px;
+    background: rgba(48,29,96,0.2);
+    border-radius: 16px;
+    margin:144px auto 0;
+    padding:11px;
+}
+
+.content{
+    width:366px;
+    height:366px;
+    background: #000;
+    border-radius: 11px;
+    padding:18px 16px 16px 18px;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-template-rows: repeat(3,1fr);
+    grid-gap: 2px;
+}
+
+.block{
+    background: #8bcc00;
+    border-radius: 6px;
+}
+

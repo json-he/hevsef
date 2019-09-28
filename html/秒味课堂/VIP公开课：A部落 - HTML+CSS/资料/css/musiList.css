@@ -1,0 +1,121 @@
+body{
+    margin:0;
+}
+ul{
+    margin:0;
+    padding: 0;
+    list-style:none;
+}
+img{
+    vertical-align: top;
+}
+a{
+    text-decoration: none;
+    color: inherit;
+}
+.box{
+    width:334px;
+    height: 475px;
+    border:1px solid #0f820c;
+    margin:0 auto;
+    padding:25px 14px 8px 19px;
+}
+
+.header{
+    height:30px;
+    margin-bottom: 12px;
+}
+
+.header .title{
+    float: left;
+    border-left:5px solid #8bcc00;
+    height:100%;
+    font-size: 0;
+}
+.header .title a{
+    display: inline-block;
+    width: 30px;
+    height:30px;
+    margin-left: 10px;
+}
+.header .title a.play{
+    background: url("../images/music_05.png") no-repeat;
+}
+.header .title a.add{
+    background: url("../images/music_07.gif") no-repeat;
+}
+.header .type{
+    float: right;
+    padding-top: 2px;
+    font:12px/28px '宋体';
+    color: #0f820c;
+}
+
+.header .type a.active{
+    font-weight:bold;
+    color: #333333;
+}
+
+
+
+.list li{
+    height: 35px;
+    font:14px/36px '宋体';
+    color: #515151;
+    border-bottom: 1px dotted transparent;
+}
+
+.list li:hover{
+    border-color: #999;
+}
+
+.list li:hover .date{
+    display: none;
+}
+
+.list li:hover .icon{
+    display: block;
+}
+
+.list li .title{
+    float: left;
+}
+
+.list .title span{
+    color: #0f820c;
+}
+
+.list .date{
+    float: right;
+    color: #8b8b8b;
+}
+.list .icon{
+    float: right;
+    font-size:0;
+    padding-top: 8px;
+    display: none;
+    height: 19px;
+}
+
+.list .icon i{
+    width: 19px;
+    height:19px;
+    display: inline-block;
+    margin-left: 1px;
+}
+
+.list .icon i.play{
+    background: url("../images/music1_03.png") no-repeat;
+}
+.list .icon i.add{
+    background: url("../images/music1_05.png") no-repeat;
+}
+.list .icon i.like{
+    background: url("../images/music1_07.png") no-repeat;
+}
+.list .icon i.collect{
+    background: url("../images/music1_09.png") no-repeat;
+}
+.list .icon i.share{
+    background: url("../images/music1_11.png") no-repeat;
+}
