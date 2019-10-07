@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title></title>
+		<style>
+			.box{
+				border: 1px solid red;
+			}
+			.item{
+				width: 200px;
+				height: 200px;
+				background-color: black;
+				float: left;
+			}
+		</style>
+		<!--
+			清除浮动的方法
+			1、加高度 (扩展性不好)
+			2、给父级加浮动 (页面中所有元素都加浮动，margin左右自动失效（floats bad ！）)
+			3、.inline-block 清浮动方法 (margin左右auto失效)
+			4、空标签清除浮动 (IE6 最小高度 19px；（解决后IE6下还有2px偏差）)
+			5、.br清浮动	(不符合工作中：结构、样式、行为，三者分离的要求)
+
+		-->
+	</head>
+	<body>
+		<div class="box">
+			<div class="item"></div>
+			<br clear="all" />
+		</div>
+	</body>
+</html>
