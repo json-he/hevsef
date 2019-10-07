@@ -1,0 +1,97 @@
+@rem:32rem;
+
+body{
+  margin:0;
+}
+
+/*nav{
+  height:50px;
+  background-color: #033333;
+  .content{
+    width:1200px;
+    margin:0 auto;
+    a{
+      color: #fff;
+      &:hover{
+        color: #e15671;
+      }
+    }
+    .left{
+      float: left;
+      &.padding_left{
+        padding-left: 20px;
+      }
+    }
+
+    /*
+      在less里面  &代表了父元素本身
+    *
+
+    //在less里面  &代表了父元素本身
+
+    .right{
+      float: right;
+    }
+  }
+}*/
+
+/*
+a = 12;
+b = 20
+
+a+b =?
+*/
+
+@fontSize:20px;
+
+nav{
+  height:50px;
+  background-color: #033333;
+  font-size:0;
+  .content{
+    width:1200px;
+    margin:0 auto;
+    a{
+      color: #fff;
+      &:hover{
+        color: #e15671;
+      }
+    }
+    .left{
+      display: inline-block;
+      font-size:@fontSize;
+      &.padding_left{
+        padding-left: 20px;
+      }
+    }
+    .right{
+      display: inline-block;
+      font-size:@fontSize;
+    }
+  }
+}
+
+//作用 域（空间，范围）
+
+@a:12px;
+
+.box{
+  @a:14px;
+  width:@a;
+}
+
+.name{
+  .main{
+    width:@a;
+  }
+}
+
+//单向玻璃
+/*
+变量的声明
+  @ + name : 'font-size:12px';
+  var
+变量的使用
+  不要重复声明变量
+  声明变量的位置
+*/

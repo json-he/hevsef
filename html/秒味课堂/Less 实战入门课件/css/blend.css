@@ -1,0 +1,176 @@
+body,
+h1,
+h2,
+h3,
+h4,
+p {
+  margin: 0;
+}
+body {
+  font-size: 0.86666667rem;
+  font-family: '微软雅黑';
+  color: #738797;
+}
+a {
+  text-decoration: none;
+  color: inherit;
+}
+a:hover {
+  color: #f00;
+}
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/*@border:'border:1px solid #b7b7b7';
+
+.box{
+  width:@border;
+}*/
+/*.classa{
+  border:1px solid #b7b7b7;
+}
+
+.clearFix{
+  *zoom:1;
+  &:after{
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+
+.classb{
+  .classa;
+  .clearFix;
+}*/
+/*
+.border(@color){
+  border:1px solid @color;
+}
+
+.box1{
+  .border(#b7b7b7);
+}
+.box2{
+  .border(#ff0000);
+}
+.box3{
+  .border(#b7b7b7);
+}
+
+
+//多个参数的混合
+
+.border(@width,@style,@color){
+  border:@width @style @color;
+}
+
+.box1{
+  .border(1px,solid,#b7b7b7);
+}
+.box2{
+  .border(1px,solid,#ff0000);
+}
+.box3{
+  .border(2px,solid,#b7b7b7);
+}
+.box4{
+  .border(1px,dotted,#b7b7b7);
+}*
+
+
+
+//带默认值的参数混合
+
+.border(@width:1px,@style:solid){
+  border:@width @style #033333;
+}
+
+.box1{
+  .border(1px,dotted);
+}
+.box2{
+  .border();
+}
+.box3{
+  .border(2px);
+}
+.box4{
+  .border();
+}
+
+
+//arguments变量 ,  代表了所有的参数（在不在乎参数顺序的时候可以使用）；
+
+.border(@style:solid,@width:1px){
+  border:@arguments #033333;
+}
+
+.box1{
+  .border(1px,dotted);
+}
+.box2{
+  .border();
+}
+.box3{
+  .border(2px);
+}
+.box4{
+  .border();
+}*
+
+//模式匹配
+
+.border(top,@width:1px){
+  border-top:@width solid #033333;
+}
+.border(right,@width:1px){
+  border-right:@width solid #033333;
+}
+.border(bottom,@width:1px){
+  border-bottom:@width solid #033333;
+}
+.border(left,@width:1px){
+  border-left:@width solid #033333;
+}
+.border(@_,@width:1px){
+  width:round(5.5)*1px;
+}
+
+.box1{
+  .border(top,5px);
+}
+
+.box2{
+  .border(right);
+}
+
+.box3{
+  .border(bottom);
+}
+
+.box4{
+  .border(left);
+}
+
+//Math函数
+/*
+  round(5.5)  四舍五入
+  ceil(2.4);   向上取整// returns `3`;
+  floor(2.6);  向下取整// returns `2`;
+*/
+.blue .button {
+  background: blue;
+}
+.red .button {
+  background: red;
+}
+.box {
+  width: 30rem;
+  font: 0.4rem / 0.66666667rem '宋体';
+}
+/*
+    这种注释会被解析到css文件里面去
+*/

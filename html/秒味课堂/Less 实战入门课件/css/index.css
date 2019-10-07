@@ -1,0 +1,79 @@
+body {
+  margin: 0;
+}
+/*nav{
+  height:50px;
+  background-color: #033333;
+  .content{
+    width:1200px;
+    margin:0 auto;
+    a{
+      color: #fff;
+      &:hover{
+        color: #e15671;
+      }
+    }
+    .left{
+      float: left;
+      &.padding_left{
+        padding-left: 20px;
+      }
+    }
+
+    /*
+      在less里面  &代表了父元素本身
+    *
+
+    //在less里面  &代表了父元素本身
+
+    .right{
+      float: right;
+    }
+  }
+}*/
+/*
+a = 12;
+b = 20
+
+a+b =?
+*/
+nav {
+  height: 50px;
+  background-color: #033333;
+  font-size: 0;
+}
+nav .content {
+  width: 1200px;
+  margin: 0 auto;
+}
+nav .content a {
+  color: #fff;
+}
+nav .content a:hover {
+  color: #e15671;
+}
+nav .content .left {
+  display: inline-block;
+  font-size: 20px;
+}
+nav .content .left.padding_left {
+  padding-left: 20px;
+}
+nav .content .right {
+  display: inline-block;
+  font-size: 20px;
+}
+.box {
+  width: 14px;
+}
+.name .main {
+  width: 12px;
+}
+/*
+变量的声明
+  @ + name : 'font-size:12px';
+  var
+变量的使用
+  不要重复声明变量
+  声明变量的位置
+*/
