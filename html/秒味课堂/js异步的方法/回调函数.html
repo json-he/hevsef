@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+        function f1(f2) {
+            setTimeout(function () {
+                console.log('先执行 f1')
+            },1000)
+            f2()
+        }
+        function f2() {
+            console.log('再执行 f2')
+        }
+
+        f1(f2)
+</script>
+</body>
+</html>
