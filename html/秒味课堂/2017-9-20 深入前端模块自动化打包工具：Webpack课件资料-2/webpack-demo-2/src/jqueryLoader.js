@@ -4,6 +4,6 @@
  * GitHub: zmouse@github.com
  */
 
-// import $ from './jquery.min';
+import $ from './jquery.min';
 
-// console.log($);
+console.log($);
