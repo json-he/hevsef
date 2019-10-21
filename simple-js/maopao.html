@@ -43,7 +43,7 @@
     var three = document.getElementById('three');
     var four = document.getElementById('four');
 
-    var useCapture = true; //false为冒泡获取【目标元素先触发】    true为捕获获取【父级元素先触发】
+    var useCapture = true; //false为冒泡获取【目标元素先触发】    true为捕获获取【父级元素先触发】  js默认是false冒泡
     one.addEventListener('click', function() {
         console.log('one');
     }, useCapture);
