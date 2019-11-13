@@ -34,6 +34,7 @@
 </body>
 </html>
     <script>
+        Vue.http.headers.common['authorization'] = 'Basic MTRwWDNMWnZoN2xrNW5fVXF6bmNaT3BRMHY4WGRNWGdfMTU3MzE4OTU3Mjo=';
         var vm = new Vue({
             el: '#app',
             data: {
@@ -41,16 +42,16 @@
             }
         })
 
-        vm.$http.post(
-            'www.api.com/user',{name:'chenrj',sex:'1',age:18},{emulateJSON:true}).then(function(res){
-            this.$message('添加成功');
-        },function(){
-            this.$message.error('添加失败');
-        });
+        // vm.$http.post(
+        //     'www.api.com/user',{name:'chenrj',sex:'1',age:18},{emulateJSON:true}).then(function(res){
+        //     this.$message('添加成功');
+        // },function(){
+        //     this.$message.error('添加失败');
+        // });
 
         vm.$http.get(
-            'www.api.com/user',{params:{user_id:1,page_size:10,page_index:1}},{emulateJSON:true}).then(function(res){
-            this.category_list = res.data.data;
+            'http://jupiter2.bayescom.com/dspapi/v1/configs/1325_0',{},{emulateJSON:true}).then(function(res){
+                console.log(res);
         },function(){
             this.$message.error('加载列表失败');
         });
