@@ -1,0 +1,30 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script type="text/javascript" src="sea/sea.js"></script>
+<script>
+
+//seajs.use : 页面去调用模块 , 第一个参数：模块的地址，第二参数：地址加载成功后的回调函数
+
+//seajs的默认跟目录  ：sea.js
+
+seajs.use('./js/test1.js',function(ex){ //回调的参数，就是模块中的exports
+
+	ex.tab();  //很好的避免了命名冲突
+	
+	tab();
+	
+	function tab(){
+		alert(456);
+	}
+	
+});
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

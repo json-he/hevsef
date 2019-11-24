@@ -1,0 +1,37 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>无标题文档</title>
+<script>
+
+你写的 : test.js -> test()
+
+你的同事:
+<script src="a.js"></script>
+<script src="test.js"></script>
+test();  //没问题了
+
+
+你的同事(很不爽):
+<script src="a.js"></script>
+<script src="b.js"></script>
+<script src="test.js"></script>
+test();  //没问题了
+
+
+你的同事(很不爽):
+<script src="a.js"></script>
+<script src="b.js"></script>
+<script src="test.js"></script>
+<script src="test2.js"></script>
+test();  //没问题了
+
+依赖的问题，大部分时间都在修改BUG，加班在所难免
+
+</script>
+</head>
+
+<body>
+</body>
+</html>

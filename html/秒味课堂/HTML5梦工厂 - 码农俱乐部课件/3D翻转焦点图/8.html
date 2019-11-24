@@ -1,0 +1,500 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<title>无标题文档</title>
+<style>
+body,ul{ margin:0;padding:0;}
+li{ list-style:none;}
+#box{width:570px;height:420px;margin:30px auto; position:relative;}
+.list{ width:570px;height:420px;  -webkit-perspective:600px; -webkit-transform-style:preserve-3d; position:absolute;left:0;top:0;}
+/*
+	-moz-
+	-ms-
+*/
+.list li{ width:55px;height:58px; border:1px solid rgba(0,0,0,0); background:Red; float:left; background:url(demo/images/1.jpg) no-repeat;box-shadow:0 0 0 blue;}
+#box input{ width:60px;height:60px; position:absolute; top:100px; border-radius:50%;}
+.list:nth-of-type(2) li{ background:url(demo/images/2.jpg) no-repeat;}
+.list:nth-of-type(3) li{ background:url(demo/images/3.jpg) no-repeat;}
+.list:nth-of-type(4) li{ background:url(demo/images/4.jpg) no-repeat;}
+.list:nth-of-type(5) li{ background:url(demo/images/5.jpg) no-repeat;}
+#box input:nth-of-type(1){ left:-100px;}
+#box input:nth-of-type(2){ right:-100px;}
+</style>
+<script>
+window.onload=function()
+{
+	var oList=document.getElementById("box");
+	var aUl=oList.getElementsByTagName("ul");
+	var oBtn=document.getElementsByTagName("input");
+	var iCeils=oList.clientWidth/aUl[0].children[0].offsetWidth;
+	var iRows=oList.clientHeight/aUl[0].children[0].offsetHeight;
+	//var aXy=setXy(aLi,iCeils,iRows);
+	var aXy=[];
+	var iNow=0;
+	oBtn[0].onclick=function()
+	{
+		if(iNow>0)
+		{
+			iNow--;
+			aUl[iNow].style.visibility="visible";
+			aUl[iNow].children[0].removeEventListener("webkitTransitionEnd",end,false);
+			toTab(aXy[iNow],0,0,function(){
+				with(this.style)
+				{
+					transition="1s background,.2s border,.3s  box-shadow,1s  -webkit-transform ease-in,1s  opacity ease-in";
+					borderColor="rgba(0,0,0,0)";
+					boxShadow="0 0 0 blue";
+					WebkitTransform="translate(0px,0px) rotateX(0deg) rotateY(0deg)";
+					opacity=1;
+				};
+			},50,1,1);
+		}
+	};
+	oBtn[1].onclick=function()
+	{
+		if(iNow<aXy.length-1)
+		{
+			toTab(aXy[iNow],iCeils-1,iRows-1,function(){
+					with(this.style)
+					{
+						 transition="1s background,.2s border,.3s .15s box-shadow,2s .3s -webkit-transform,2s .3s opacity"; 
+						borderColor="rgba(0,0,0,0.6)";
+						boxShadow="0 0 20px blue";
+						WebkitTransform="translate(-50px,-150px) rotateX(-720deg) rotateY(-360deg)";
+						opacity=0;
+					};
+					if(this.xIndex==0 && this.yIndex==0)
+					{
+						this.addEventListener("webkitTransitionEnd",end,false);
+
+					}
+			},50,-1,-1);
+			iNow++;
+		}
+	};
+	
+	for(var i=0;i<aUl.length;i++)
+	{
+		aUl[i].style.zIndex=aUl.length-i;
+		aXy.push(setXy(aUl[i].children,iCeils,iRows));
+		aUl[i].onclick=(function(a){
+			return function()
+			{
+				alert(a);
+			}
+		})(i);
+	}
+	
+}
+function end(e)
+{
+	if(e.propertyName=="-webkit-transform")
+	{
+		this.parentNode.style.visibility="hidden";
+
+	}
+}
+function toTab(aXy,x,y,fn,iDelay,iDisX,iDisY)
+{
+	if(!aXy[y] || !aXy[y][x])
+	{
+		return;
+	}
+	if(fn)
+	{
+		fn.call(aXy[y][x]);
+		clearTimeout(aXy[y][x].timer);
+		aXy[y][x].timer=setTimeout(function(){
+			toTab(aXy,x+iDisX,y,fn,iDelay,iDisX,iDisY);
+			toTab(aXy,x,y+iDisY,fn,iDelay,iDisX,iDisY);
+		},iDelay)
+	}
+}
+function setXy(oBjs,iCeils,iRows)
+{
+	var arr=[];
+	for(var i=0;i<iRows;i++)
+	{
+		var arr2=[];
+		for(var j=0;j<iCeils;j++)
+		{
+			oBjs[i*iCeils+j].xIndex=j;
+			oBjs[i*iCeils+j].yIndex=i;
+			oBjs[i*iCeils+j].style.backgroundPosition=-j*57+"px -"+i*60+"px";
+			arr2.push(oBjs[i*iCeils+j]);
+		}
+		arr.push(arr2);
+	}
+	
+	return arr;
+}
+</script>
+</head>
+<body>
+<div id="box">
+	<input type="button" value="上一张" />
+    <ul class="list">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="list">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="list">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="list">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <ul class="list">
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <input type="button" value="下一张" />
+</div>
+</body>
+</html>
