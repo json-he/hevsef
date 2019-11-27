@@ -9,5 +9,5 @@ function create_pallette($start, $end, $entries = 10)
     return $out;
 }
 
-$s = create_pallette(252, 252 - 5, 400);
+$s = create_pallette(200, 200 + 50, 728);
 print_r($s);
