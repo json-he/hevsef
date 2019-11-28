@@ -56,13 +56,17 @@ function createImg($img,$title,$desc,$width,$height) {
     $rAverage=round($rTotal/$total);
     $gAverage=round($gTotal/$total);
     $bAverage=round($bTotal/$total);
+
+    $rAverage = 244;
+    $gAverage = 238;
+    $bAverage = 238;
     //end
 //    print_r($rAverage);
 //    print_r($gAverage);
 //    print_r($bAverage);exit;
     //生成渐变
     //渐变柔和度
-    $gentle = 50;
+    $gentle = 20;
     $r = create_pallette($rAverage, $rAverage + $gentle, $width);
     $g = create_pallette($gAverage, $gAverage + $gentle, $width);
     $b = create_pallette($bAverage, $bAverage + $gentle, $width);
