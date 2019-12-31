@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--2.如果在click事件中，在你要处理的事件之前加上e.preventDefault();-->
+
+<!--阻止冒泡是event.stopPropagation()。-->
+
+<!--event.preventDefault()是阻止默认行为啊！！-->
+
+<!--a元素的默认行为点击会跳转-->
+
+<!--3.e.stopPropagation()只要在click事件中，就不会触发上层click事件。-->
+
+﻿﻿
+<body>
+<div id="box" class="icon" style="width: 200px;height: 200px;background: blue"></div>
+<script>
+    var box = document.getElementById('box');
+
+    function isIcon(target) {
+
+        return target.className.includes('icon')
+
+    }
+
+    box.onclick = function(e) {
+        e.stopPropagation();
+        const target = e.target;
+        if (isIcon(target)) {
+            target.style.border = '1px solid red'
+        }
+    }
+
+    var doc = document;
+
+    doc.onclick = function(e) {
+        box.style.border = 'none'
+    }
+</script>
+</body>
+</html>

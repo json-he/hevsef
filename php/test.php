@@ -1,46 +1,20 @@
 <?php
-$s = "50岁以上老人专用老花镜！";
-  function reMovePunctuation($word){
-      $word = str_replace('！','',$word);
-      $word = str_replace('。','',$word);
-      $word = str_replace('，','',$word);
-    return $word;
+
+$a = [  '10002308' ,'10002309','10002310' ,'10002311',
+    '10002368' ,'10002369','10002370' ,'10002371',
+    '10002394' ,'10002395','10002396' ,'10002397',
+    '10002398' ,'10002399','10002400' ,'10002401',
+    '10002476' ,'10002477','10002478' ,'10002479',
+    '10002480' ,'10002481',
+    '10002484' ,'10002485','10002488' ,'10002489',
+    '10002490' ,'10002491','10002492' ,'10002493',
+    '10002611' ,'10002612','10002676','10002677'];
+echo implode(',',$a);
+echo PHP_EOL;
+
+
+if(empty($date)){
+    $date = date("Y-m-d", time());
 }
-  function getword($str,$LineMaxLength){
-    $str = str_replace('，','，^',$str);
-    $str = str_replace('。','。^',$str);
-    $str = str_replace('！','！^',$str);
-    $str = str_replace('、','、^',$str);
-    $str = str_replace('？','？^',$str);
-    $str = str_replace('：','：^',$str);
-    $str = str_replace('；','；^',$str);
-
-    $str = str_replace(',',',^',$str);
-    $str = str_replace('.','.^',$str);
-    $str = str_replace('!','!^',$str);
-    $str = str_replace('?','?^',$str);
-    $str = str_replace(':',':^',$str);
-    $str = str_replace(';',';^',$str);
-
-    $arr = explode('^',$str);
-    $sarr = [];
-    foreach ($arr as $v){
-        $key = mb_strlen($v, 'utf-8');
-        $sarr[$key] = $v;
-    }
-    $k = array_keys($sarr);
-    rsort($k);
-    $res = $sarr[$k[0]];
-    if(strpos($res,'，') !== false){
-        $res = str_replace('，','',$res);
-    }
-
-    $outlen = mb_strlen($res, 'utf-8');
-    if($outlen>$LineMaxLength){
-        if(($outlen%$LineMaxLength)==1){  //刚好只有一个标点结尾
-            $res = reMovePunctuation($res);
-        }
-    }
-    return $res;
-}
-echo getword($s,12);
+$dayTimeStamp= strtotime($date);
+echo $dayTimeStamp;
