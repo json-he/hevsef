@@ -20,6 +20,6 @@
   },
   "homepage": "https://github.com/romannovojilov/adaptive-horizontal-menu#readme",
   "dependencies": {
-    "jquery": "^3.4.1"
+    "jquery": "^3.5.0"
   }
 }
