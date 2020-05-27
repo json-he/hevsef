@@ -1,4 +1,2 @@
 <?php
-$s = null;
-
-var_dump(isset($s));
+ echo intval(0.58*100);

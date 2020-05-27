@@ -35,3 +35,4 @@ class C extends B
 }
 
 C::test();
+
