@@ -97,11 +97,68 @@
 
         //删除指定元素
         public function delete($index){
+            //巧妙啊为负数的时候就是从后往前
             if($index <0){
-                
+               $index = $this->length + $index; 
             }
+            if($this->length==0||$index>$this->length){
+                return false;
+            }
+            $current = $this->head;
+            $i = 0;
+            while($i<$index){
+                $i++;
+                $current = $current->next;
+            }
+            $current->next = $current->next->next;
+            $this->length--;
+            return true;
+        }
+
+        //清空链表
+        public function clear(){
+            $this->head = null;
+            $this->length = 0;
+            return $this;
         }
     
+        public function print(){
+            $current = $this->head;
+            $i = 0;
+            echo '<hr>';
+            echo sprintf("共有%d个元素",$this->length);
+            while($i!==null){
+                echo '<br>';
+                echo sprintf('当前第 %d个元素',$i);
+                print_r($current->data);
+                $current = $current->next;
+                $i++;
+            }
+            echo sprintf('<br>打印结束<br><br>');
+        }
+        
+        //反向
+        public function reverse(){
+            if($this->length==0){
+                return false;
+            }
+            $current = $this->head->next;
+            $pre = null;
+            while($current!=null){
+                $next = $current->next;
+                $current->next = $pre;
+                $pre = $current;
+                $current = $next;
+            }
+            $this->head = $pre;
 
-
+        }
+        
     }
+    $linkedList = new SingleLinkedList();
+$linkedList->insert(1)
+	->insert(2)
+	->insert(['a', 'b', 'c'])
+	->headInsert(-1)
+	->insert(100)
+	->print();
