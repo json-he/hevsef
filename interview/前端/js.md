@@ -1,18 +1,4 @@
-#js中null和undefined区别
-    null是空对象引用，引用指向为空
-    undefined是只定义了引用
-    
-    typeof null：”object”
-    typeof undefined ： “undefined”
-    
-    例子：
-        var oValue;  
-        alert(oValue == undefined); //output "true"  
-        
-        alert(null == document.getElementById('notExistElement'));   //true
-        
-        alert(typeof undefined); //output "undefined"  
-        alert(typeof null); //output "object"  
+
         
 
 #js this 是谁的见knowledge
@@ -43,8 +29,7 @@ ES5 的this 是调用它的人
    解析：因为使用了严格模式，导致b未声明就使用了，于是会报错误
    b is not defined
 ```
-#理解闭包吗?请讲一讲闭包在实际开发中的作用;闭包建议频繁使用吗?
-闭包就是函数。
+
 #ajax 跨域有哪些方法，jsonp 的原理是什么，如果页面编码和被请求的资源编码不一致如何处理?
 
 #Object.assign
@@ -65,6 +50,5 @@ ES5 的this 是调用它的人
 #https 对称非对称原理
 http://www.52im.net/thread-2446-1-1.html
 
-#说一下浏览器的缓存机制
-https://www.jianshu.com/p/9c95db596df5
+
 
