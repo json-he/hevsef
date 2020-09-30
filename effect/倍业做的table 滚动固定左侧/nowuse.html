@@ -1,0 +1,94 @@
+<html>
+<!--固定table 两个列-->
+<head>
+    <meta charset="utf-8"></meta>
+    <script src="https://cdn.bootcdn.net/ajax/libs/jquery/1.10.0/jquery.js"></script>
+    <title>test</title>
+    <style>
+        table{border-collapse: collapse;}
+        tr{
+            border: red 1px solid;
+        }
+        td{
+            border-right: red 1px solid;
+        }
+    </style>
+</head>
+<body style="position: relative">
+<div id="firstDiv" style="width: 450px;overflow-x: scroll;">
+    <table style="width: 600px;" id="tableFirst">
+        <thead>
+        <tr>
+            <td onclick="aletFun()">1</td>
+            <td>2</td>
+            <td>3</td>
+            <td>4</td>
+            <td>5</td>
+            <td>6</td>
+            <td>7</td>
+            <td>8</td>
+        </tr>
+        </thead>
+        <tr>
+            <td onclick="aletFun()">11</td>
+            <td>12</td>
+            <td>13</td>
+            <td>14</td>
+            <td>15</td>
+            <td>16</td>
+            <td>17</td>
+            <td>18</td>
+        </tr>
+        <tr>
+            <td>21</td>
+            <td>22</td>
+            <td>23</td>
+            <td>24</td>
+            <td>25</td>
+            <td>26</td>
+            <td>27</td>
+            <td>28</td>
+        </tr>
+    </table>
+</div>
+<script>
+    $("#firstDiv").scroll(function() {
+        if($("#copyDiv").length <= 0){
+            $("#firstDiv").append("<div id='copyDiv' style='background-color: wheat;width: 300px;overflow-x: hidden;top: 0px;position: absolute;'>" + $("#tableFirst").prop('outerHTML') + "</div>");
+        }else{
+            if($("#firstDiv").scrollLeft() <= 0){
+                $("#copyDiv").css("display","none");
+            }else{
+                $("#copyDiv").css("display","block");
+            }
+        }
+    });
+    function aletFun() {
+        alert("aaaa");
+    }
+</script>
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

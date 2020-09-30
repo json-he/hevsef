@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" id="input">
+<script>
+    const data = {};
+    const input = document.getElementById("input");
+    input.onchange = e =>{
+        let target = e.target;
+        data.text = target.value;
+    }
+
+    // Object.defineProperty()的作用就是直接在一个对象上定义一个新属性，或者修改一个已经存在的属性
+    // data不会有一个text属性但是会有的一个 set text 的方法
+    Object.defineProperty(data,'text',{
+        set(value){
+            input.value = value;
+            this.value = value;
+        }
+
+    })
+</script>
+</body>
+</html>
