@@ -40,7 +40,7 @@ countLeftPx(key, m = 3, gap = 10) {
     return res
 }
 
-key 表示第几个 
+key 表示第几个
 
 // todo 这个算法 的  countLeft 有点问题 有待修改
 
