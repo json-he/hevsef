@@ -1,0 +1,69 @@
+<Route key={'me_vault'} component={Orders} path="/me/orders"/>
+
+route 下的 key 是干什么的
+
+
+budo  是什么
+budo src/main.js --live --title='csjs demo'
+
+
+https://github.com/colingourlay/hyperstyles 是什么鬼？
+和 csjs 一起再用 在  csjs  那个项目里example
+
+
+https://zhuanlan.zhihu.com/p/20381597   react 路由
+
+
+bem  命名
+https://github.com/Tencent/tmt-workflow/wiki/%E2%92%9B-%5B%E8%A7%84%E8%8C%83%5D--CSS-BEM-%E4%B9%A6%E5%86%99%E8%A7%84%E8%8C%83
+
+命名快捷方式
+
+https://www.zhangxinxu.com/wordpress/2018/10/display-flex-css3-css/  flex 需要强化
+
+todo 找 距离公倍数最近的数
+
+react 组件里的 db 是什么
+
+
+@connect(state => ({
+  user: getIn(state, 'user', {}),
+}))
+
+await  和 async  使用
+
+mock 的使用
+
+css 精通，为了节后mobile 端 做准备
+
+Tableau和Metabase评估
+
+杨波的取图方法
+
+chrome tool 里的 waterfall 是什么
+
+src/ui/page.js 下的   是怎么一个引入关系
+render(props, state) {
+    return (
+      <div
+        className={cx(styles.pageCtr, resetRootStyle, props.isHiddenHeader ? 'hide' : 'scrollHandle')}
+      >
+        {!isHiddenHeader && <Header></Header>}
+        <Page ref={(ref) => { this.pageRef = ref }} { ...props } { ...state } />
+        {showFooter && <Footer />}
+      </div>
+    )
+  }
+
+
+ifttt
+
+
+rxjs
+
+
+杨说 策略模式可以解决 if 的问题
+
+@connect  里 拿    src/store.js 的内容是怎么做到的
+
+

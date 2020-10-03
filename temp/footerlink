@@ -1,0 +1,41 @@
+localhost
+test
+demo
+dev
+pre
+prod
+
+{
+    "id": "footerMap",
+    "data": {
+       "localhost": {
+                "en": {
+                    "footerMapPrivacyPolicy": {
+                        "title": "Privacy Policy",
+                        "itemCodeHtml": "<p>wowowowowowow</p>\n",
+                        "itemCodeMd": "wowowowowowow"
+                    },
+                    "footerMapTermsConditions": {
+                        "title": "Terms & Conditions",
+                        "itemCodeHtml": "<p>the future rocks</p>\n",
+                        "itemCodeMd": "the future rocks"
+                    },
+                    "footerMapSalesandRefunds": {
+                        "title": "Sales and Refunds",
+                        "itemCodeHtml": "the future rocks",
+                        "itemCodeMd": "the future rocks"
+                    },
+                    "footerMapLegal": {
+                        "title": "Legal",
+                        "itemCodeHtml": "the future rocks",
+                        "itemCodeMd": "the future rocks"
+                    },
+                    "footerMapSitemap": {
+                        "title": "Sitemap",
+                        "itemCodeHtml": "the future rocks",
+                        "itemCodeMd": "the future rocks"
+                    }
+                }
+            },
+    }
+}
